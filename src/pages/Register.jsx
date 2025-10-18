@@ -66,7 +66,6 @@ const Register = () => {
     const validationErrors = validateCredentials(formData);
     setError(validationErrors);
 
-    console.log(validationErrors);
     if (!isValid(validationErrors)) {
       return;
     }

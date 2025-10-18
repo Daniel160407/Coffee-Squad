@@ -42,7 +42,10 @@ const Dropdown = ({
   }, []);
 
   return (
-    <div ref={dropdownRef} className={"relative inline-block cursor-pointer"}>
+    <div
+      ref={dropdownRef}
+      className="relative inline-block cursor-pointer w-full"
+    >
       <Button
         icon={Icon}
         iconPosition={iconPosition}
@@ -53,20 +56,20 @@ const Dropdown = ({
 
       {isOpen && (
         <div className={contentStyle}>
-          <div className="gap-[10px] px-[16px]">
-            {title && (
-              <p className="font-poppins text-[16px] leading-[100%] font-semibold tracking-normal text-[#10151F]">
-                {title}
-              </p>
-            )}
-          </div>
+          {title && (
+            <div className="p-4 border-b border-gray-600">
+              <p className="font-semibold text-white">{title}</p>
+            </div>
+          )}
           <ul className="max-h-60 overflow-auto">
             {options.map((option, index) => (
               <li
                 key={index}
                 onClick={() => handleSelect(option)}
-                className={`gap-[10px] px-[16px] py-[8px] ${
-                  option === selectedValue ? "bg-blue-50 text-blue-600" : ""
+                className={`px-4 py-3 hover:bg-[#a4e636] font-semibold hover:text-black border-b border-gray-600 last:border-b-0 transition-colors duration-150 ${
+                  option === selectedValue
+                    ? "bg-[#8cc42a] text-black"
+                    : "text-white"
                 }`}
               >
                 {option}
