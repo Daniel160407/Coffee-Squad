@@ -1,43 +1,51 @@
 import { useState } from "react";
 import Button from "../components/uiComponents/Button";
 import { FiDownload, FiImage, FiMail } from "react-icons/fi";
+import Header from "../components/Header/header";
+
+ 
 
 const Cycling = () => {
   const [openDownloadPdfLayout, setOpenDownloadPdfLayout] = useState(false);
   const [openCardCreationLayout, setOpenCardCreationLayout] = useState(false);
-  const [openConsultationRequestLayout, setOpenConsultationRequestLayout] =
-    useState(false);
+  const [openConsultationRequestLayout, setOpenConsultationRequestLayout] = useState(false);
 
   return (
-    <div>
+    <>
+      <Header />
       <div>
-        <h1>O2 Coaching</h1>
-        <p>Your performance laboratory</p>
         <div>
-          <Button
-            icon={FiDownload}
-            type="btn"
-            title={"Download your Complete Analysis"}
-            onClick={() => setOpenDownloadPdfLayout(!openDownloadPdfLayout)}
-          />
-          <Button
-            icon={FiImage}
-            type="btn"
-            title={"Create Athlete Card"}
-            onClick={() => setOpenCardCreationLayout(!openCardCreationLayout)}
-          />
-          <Button
-            icon={FiMail}
-            type="btn"
-            title={"Request a Consultation"}
-            onClick={() =>
-              setOpenConsultationRequestLayout(!openConsultationRequestLayout)
-            }
-          />
+          <h1>O2 Coaching</h1>
+          <p className="text-red-500">Your performance laboratory</p>
+          <div>
+            <Button
+              icon={FiDownload}
+              type="btn"
+              title={"Download your Complete Analysis"}
+              onClick={() => setOpenDownloadPdfLayout(!openDownloadPdfLayout)}
+            />
+            <Button
+              icon={FiImage}
+              type="btn"
+              title={"Create Athlete Card"}
+              onClick={() => setOpenCardCreationLayout(!openCardCreationLayout)}
+            />
+            <Button
+              icon={FiMail}
+              type="btn"
+              title={"Request a Consultation"}
+              onClick={() =>
+                setOpenConsultationRequestLayout(!openConsultationRequestLayout)
+              }
+            />
+          </div>
+          <p>
+            Includes athlete profile, power zones and sustainable power in one
+            PDF
+          </p>
         </div>
-        <p>Includes athlete profile, power zones and sustainable power in one PDF</p>
       </div>
-    </div>
+    </>
   );
 };
 
