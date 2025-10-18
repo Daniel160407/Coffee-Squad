@@ -5,8 +5,6 @@ const Button = ({
   iconPosition = "LEFT",
   onClick,
   type = "submit",
-  outline,
-  bg
 }) => {
   const flexDirection = {
     TOP: "flex-col",
@@ -17,7 +15,7 @@ const Button = ({
 
   return (
     <button
-      className={`flex items-center outline-1 py-2 px-5 transition-all hover:bg-lime-500 rounded-[10px] bg-cyan-600 cursor-pointer justify-center gap-2 ${flexDirection[iconPosition]} ${style}`}
+      className={`flex items-center transition-all rounded-[10px] justify-center gap-2 ${flexDirection[iconPosition]} ${style}`}
       onClick={onClick}
       type={type}
     >
