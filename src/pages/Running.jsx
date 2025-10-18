@@ -1,9 +1,11 @@
+import PageHeader from "../components/layout/PageHeader";
+
 const Running = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-}
+  return (
+    <div>
+      <PageHeader />
+    </div>
+  );
+};
 
 export default Running;
