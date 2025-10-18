@@ -15,7 +15,7 @@ const Button = ({
 
   return (
     <button
-      className={`flex items-center justify-center gap-2 ${flexDirection[iconPosition]} ${style}`}
+      className={`flex items-center transition-all rounded-[10px] justify-center gap-2 ${flexDirection[iconPosition]} ${style}`}
       onClick={onClick}
       type={type}
     >
