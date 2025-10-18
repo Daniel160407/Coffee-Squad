@@ -1,30 +1,17 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
   name: "counter",
   initialState: {
-    value: 0,
+    Data: [],
   },
   reducers: {
-    incremented: (state) => {
-      state.value += 1;
-    },
-    decremented: (state) => {
-      state.value -= 1;
+    GetData: (state, action) => {
+      state.Data = [action.payload];
     },
   },
 });
 
-export const { incremented, decremented } = counterSlice.actions;
-
-const store = configureStore({
-  reducer: counterSlice.reducer,
-});
-
-store.subscribe(() => console.log(store.getState()));
+export const { GetData } = counterSlice.actions;  
 
 export default counterSlice.reducer;
-
-store.dispatch(incremented());
-store.dispatch(incremented());
-store.dispatch(decremented());

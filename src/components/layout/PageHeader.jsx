@@ -9,7 +9,7 @@ const PageHeader = () => {
     useState(false);
 
   return (
-    <div className="flex flex-col items-center w-full gap-5">
+    <div className="flex m-2 flex-col mt-10 items-center w-full h-[300px] gap-5">
       <h1 className="text-[#a4e636] text-[2rem] font-bold">O2 Coaching</h1>
       <p className="text-[#94a3b8] text-[1rem] font-medium">
         Your performance laboratory
