@@ -1,6 +1,5 @@
 const Button = ({
   icon: Icon,
-  imgSrc,
   title,
   style = "",
   iconPosition = "LEFT",
@@ -16,11 +15,10 @@ const Button = ({
 
   return (
     <button
-      className={`flex items-center transition-all rounded-[10px] justify-center gap-2 cursor-pointer ${flexDirection[iconPosition]} ${style}`}
+      className={`flex items-center transition-all rounded-[10px] justify-center gap-2 ${flexDirection[iconPosition]} ${style}`}
       onClick={onClick}
       type={type}
     >
-      {imgSrc && <img src={imgSrc} alt="avatar" className="w-[60px]" />}
       {Icon && <Icon />}
       {title && <p>{title}</p>}
     </button>
