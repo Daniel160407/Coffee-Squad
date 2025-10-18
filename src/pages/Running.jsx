@@ -1,4 +1,5 @@
 import Header from "../components/Header/header";
+import MarginLayout from "../components/MarginLayout/MarginLayout";
 import PageHeader from "../components/layout/PageHeader";
 
 const Running = () => {
@@ -6,6 +7,7 @@ const Running = () => {
     <div>
       <Header />
       <PageHeader />
+      <MarginLayout />
     </div>
   );
 };
