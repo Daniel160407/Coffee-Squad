@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "../components/Header/header";
+import Header from "../components/header/Header";
 import PageHeader from "../components/layout/PageHeader";
 import MarginLayout from "../components/MarginLayout/MarginLayout";
 import RadarChart from "../components/Chart/ChartForStats";
