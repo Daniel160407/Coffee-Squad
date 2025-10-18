@@ -20,19 +20,15 @@ ChartJS.register(
   Legend
 );
 
-const RadarChart = () => {
+const RadarChart = ({labels, dataoflabels}) => {
+  const chartId = React.useId();
+
   const data = {
-    labels: [
-      "PMAX",
-      "C. ANAEROBICA",
-      "P. AEROBICA MAX",
-      "POT. CRITICA",
-      "ENDURANCE",
-    ],
+    labels: labels,
     datasets: [
       {
         label: "Performance",
-        data: [56, 68, 68, 70, 33],
+        data: dataoflabels,
         backgroundColor: "rgba(115, 66, 255, 0.3)",
         borderColor: "#7c3aed",
         pointBackgroundColor: "#7c3aed",
@@ -61,17 +57,9 @@ const RadarChart = () => {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#0d1117",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
+    <div>
       <div style={{ width: "400px" }}>
-        <Radar data={data} options={options} />
+        <Radar data={data} options={options} updateMode="resize" redraw />
       </div>
     </div>
   );
