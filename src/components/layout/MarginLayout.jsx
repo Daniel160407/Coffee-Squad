@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
  
 import RadarChart from "../Chart/ChartForStats";
 import { useDispatch } from "react-redux";
-import { useQuery } from "@tanstack/react-query";
 import { GetData } from "../../../Redux/Reducer";
 import { Link } from "react-router-dom";
 
@@ -43,20 +42,6 @@ const fitnessInfo = [
 ];
 
 const MarginLayout = () => {
-    const { data, isPending, error } = useQuery({
-      queryKey: ["todos"],
-      queryFn: () => GET(),
-    });
-
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-      if (data) {
-        dispatch(GetData(data));  
-      }
-    }, [data, dispatch]);
-
-
   return (
     <div className="flex flex-wrap w-auto min-h-screen bg-[#8383da] screen-center justify-around text-[#fff] py-10">
       {fitnessInfo.map((items, index) => (
