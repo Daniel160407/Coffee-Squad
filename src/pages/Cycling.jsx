@@ -8,15 +8,16 @@ import Header from "../components/Header/header";
 const Cycling = () => {
   const [openDownloadPdfLayout, setOpenDownloadPdfLayout] = useState(false);
   const [openCardCreationLayout, setOpenCardCreationLayout] = useState(false);
-  const [openConsultationRequestLayout, setOpenConsultationRequestLayout] = useState(false);
+  const [openConsultationRequestLayout, setOpenConsultationRequestLayout] =
+    useState(false);
 
   return (
     <>
-      <Header />
+      <Header/>
       <div>
         <div>
           <h1>O2 Coaching</h1>
-          <p className="text-red-500">Your performance laboratory</p>
+          <p>Your performance laboratory</p>
           <div>
             <Button
               icon={FiDownload}

@@ -21,9 +21,14 @@ const Header = () => {
         <div className="flex flex-row gap-5">
           <Button
             title={"Cycling"}
-            style={"outline-1 outline-lime-400 bg-white"}
+            style={
+              "outline-1 hover:bg-lime-500 outline-lime-400 py-3 px-7  bg-white"
+            }
           />
-          <Button title={"Runing"} style="bg-lime-400" />
+          <Button
+            title={"Runing"}
+            style="bg-lime-400 py-3 px-7  hover:bg-lime-500"
+          />
         </div>
       </header>
     </>

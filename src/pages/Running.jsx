@@ -1,11 +1,12 @@
 import Header from "../components/Header/header";
 
 const Running = () => {
-    return (
-        <div>
-            <Header/>
-        </div>
-    );
-}
+  return (
+    <div>
+      <Header />
+      <PageHeader />
+    </div>
+  );
+};
 
 export default Running;
