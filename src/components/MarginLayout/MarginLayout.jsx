@@ -1,6 +1,10 @@
-import React from "react";
-import Button from "../uiComponents/Button";
+import React, { useEffect } from "react";
+ 
 import RadarChart from "../Chart/ChartForStats";
+import { useDispatch } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
+import { GetData } from "../../../Redux/Reducer";
+import { Link } from "react-router-dom";
 
 const fitnessInfo = [
   {
@@ -39,12 +43,26 @@ const fitnessInfo = [
 ];
 
 const MarginLayout = () => {
+    const { data, isPending, error } = useQuery({
+      queryKey: ["todos"],
+      queryFn: () => GET(),
+    });
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+      if (data) {
+        dispatch(GetData(data));  
+      }
+    }, [data, dispatch]);
+
+
   return (
     <div className="flex flex-wrap w-auto min-h-screen bg-[#8383da] screen-center justify-around text-[#fff] py-10">
       {fitnessInfo.map((items, index) => (
         <div
           key={index}
-          className="flex flex-col items-center justify-center w-[420px] bg-[#303058] rounded-2xl p-6 shadow-lg mb-10 transition hover:scale-105 hover:shadow-xl"
+          className="flex flex-col items-center justify-center w-[470px] bg-[#303058] rounded-2xl p-6 shadow-lg mb-10 transition hover:scale-101 hover:shadow-xl"
         >
           <h1 className="text-3xl font-semibold mb-1">{items.name}</h1>
           <p className="text-gray-300 mb-4 text-center">{items.desc}</p>
@@ -70,15 +88,15 @@ const MarginLayout = () => {
           </div>
           <RadarChart
             key={items.name}
-            labels={items.info.map((it) => it.label)} 
-            dataoflabels={items.info.map((it) => Number(it.value))}  
+            labels={items.info.map((it) => it.label)}
+            dataoflabels={items.info.map((it) => Number(it.value))}
           />
-          <Button
-            title="Change stats"
-            icon={undefined}
-            onClick={undefined}
-            style="mt-6 outline-1 cursor-pointer hover:bg-lime-500 outline-lime-400 py-3 px-7 bg-white text-black rounded-xl transition"
-          />
+          <Link
+            to={`/cycling/${items.name}`}
+            className=" flex items-center transition-all rounded-[10px] justify-center gap-2 outline-1 cursor-pointer hover:bg-[#4d4586] outline-gray-400 py-3 px-7  bg-[#6c6ace]"
+          >
+            change stats
+          </Link>
         </div>
       ))}
     </div>

@@ -57,11 +57,15 @@ const RadarChart = ({labels, dataoflabels}) => {
   };
 
   return (
-    <div>
-      <div style={{ width: "400px" }}>
-        <Radar data={data} options={options} updateMode="resize" redraw />
+      <div className="w-full">
+        <Radar
+          data={data}
+          options={options}
+          key={chartId}
+          updateMode="resize"
+          redraw
+        />
       </div>
-    </div>
   );
 };
 

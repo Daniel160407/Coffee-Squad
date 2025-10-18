@@ -8,7 +8,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  ChartOptions,
 } from "chart.js";
 
 ChartJS.register(
@@ -21,7 +20,7 @@ ChartJS.register(
 );
 
 const data = {
-  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],  
+  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
   datasets: [
     {
       label: "Visitors",
@@ -31,12 +30,11 @@ const data = {
   ],
 };
 
- 
-const options: ChartOptions<"bar"> = {
+const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: "top" as const,  
+      position: "top",
     },
     title: {
       display: true,
@@ -45,7 +43,7 @@ const options: ChartOptions<"bar"> = {
   },
 };
 
-const MyBarChart: React.FC = () => {
+const MyBarChart = () => {
   return <Bar data={data} options={options} />;
 };
 
