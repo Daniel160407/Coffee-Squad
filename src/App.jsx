@@ -1,7 +1,13 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Cycling from "./pages/Cycling";
 import Running from "./pages/Running";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -11,6 +17,7 @@ const App = () => {
         <Route path="/cycling" element={<Cycling />} />
         <Route path="/running" element={<Running />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

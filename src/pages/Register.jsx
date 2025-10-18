@@ -157,7 +157,7 @@ const Register = () => {
             type="submit"
             onClick={onSubmit}
             title={"Register"}
-            style="mt-[46px] h-[41px] w-full cursor-pointer rounded-[10px] bg-[#a4e636] px-5 py-2.5 text-white transition-all hover:bg-[#a4d116]"
+            style="mt-[46px] h-[41px] w-full cursor-pointer rounded-[10px] bg-[#a4e636] px-5 py-2.5 text-black transition-all hover:bg-[#a4d116]"
           />
 
           <p className="mt-4 w-full text-center text-[14px] text-gray-600">
