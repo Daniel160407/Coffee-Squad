@@ -43,7 +43,7 @@ const fitnessInfo = [
 ];
 
 const MarginLayout = () => {
-    const { data, isPending, error } = useQuery({
+    const { data, isPending, error } = useQuery({ 
       queryKey: ["todos"],
       queryFn: () => GET(),
     });
