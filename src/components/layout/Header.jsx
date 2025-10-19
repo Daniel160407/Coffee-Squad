@@ -1,4 +1,3 @@
-import { FiCamera } from "react-icons/fi";
 import Button from "../uiComponents/Button";
 import { useState } from "react";
 import UserDetailsForm from "../form/UserDetailsForm";
@@ -8,23 +7,24 @@ const Header = () => {
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
 
   const handleUserDetailsSubmit = (formData) => {
-    setShowUserDetailsForm(false);
-    console.log(formData);
+    console.log("User details submitted:", formData);
   };
 
   return (
     <>
       {showUserDetailsForm && (
-        <UserDetailsForm
-          onSubmit={handleUserDetailsSubmit}
-          handleBackgroundClick={() => setShowUserDetailsForm(false)}
+        <div
+          className="fixed inset-0 z-[1000] bg-black/30 backdrop-blur-lg"
+          onClick={() => setShowUserDetailsForm(false)}
         />
       )}
+
       <header className="w-full flex flex-row h-20 bg-[#303058] items-center justify-around">
         <div className="flex flex-row gap-3 items-center cursor-pointer">
           <img
             src="./images/logo.jpg"
             className="w-[60px] h-auto rounded-full"
+            alt="Coffee Fitness Logo"
           />
           <Link to={{ pathname: "/" }}>
             <div className="flex flex-col">
@@ -53,10 +53,15 @@ const Header = () => {
           <Button
             imgSrc={"/images/Avatar.jpg"}
             style="cursor-pointer text-white"
-            onClick={() => setShowUserDetailsForm(!showUserDetailsForm)}
+            onClick={() => setShowUserDetailsForm(true)}
           />
         </div>
       </header>
+      {showUserDetailsForm && (
+        <div className="fixed inset-0 z-1000 flex items-center justify-center">
+          <UserDetailsForm onSubmit={handleUserDetailsSubmit} />
+        </div>
+      )}
     </>
   );
 };

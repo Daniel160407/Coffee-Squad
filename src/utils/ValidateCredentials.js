@@ -1,7 +1,7 @@
 const validateCredentials = (fields) => {
   const {
     email = "",
-    fullname = "",
+    name = "",
     password = "",
     confirmPassword = "",
   } = fields;
@@ -20,10 +20,10 @@ const validateCredentials = (fields) => {
     }
   }
 
-  if (!fullname.trim()) {
-    errors.fullname = "The fullname field is required.";
-  } else if (fullname.length < 3) {
-    errors.fullname = "The fullname field must be at least 3 characters.";
+  if (!name.trim()) {
+    errors.name = "The name field is required.";
+  } else if (name.length < 3) {
+    errors.name = "The name field must be at least 3 characters.";
   }
 
   if (!password.trim()) {

@@ -1,4 +1,4 @@
-import Header from "../components/header/Header";
+import Header from "../components/layout/Header";
 import PageHeader from "../components/layout/PageHeader";
 import RadarChart from "../components/Chart/ChartForStats";
 import BarChart from "../components/Chart/ChartForWeeklyWorkout";

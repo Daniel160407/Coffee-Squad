@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../uiComponents/Button";
 import Input from "../uiComponents/Input";
 
-const Morestats = () => {
+const StatsForm = () => {
   const [formData, setFormData] = useState({
     date: "",
     distance: "",
@@ -114,4 +114,4 @@ const Morestats = () => {
   );
 };
 
-export default Morestats;
+export default StatsForm;

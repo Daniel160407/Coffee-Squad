@@ -1,8 +1,4 @@
-import React, { useEffect } from "react";
- 
 import RadarChart from "../Chart/ChartForStats";
-import { useDispatch } from "react-redux";
-import { GetData } from "../../../Redux/Reducer";
 import { Link } from "react-router-dom";
 
 const fitnessInfo = [
