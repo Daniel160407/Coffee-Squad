@@ -1,4 +1,4 @@
-import Header from "../components/header/Header";
+import Header from "../components/layout/Header";
 import MarginLayout from "../components/layout/MarginLayout";
 import PageHeader from "../components/layout/PageHeader";
 

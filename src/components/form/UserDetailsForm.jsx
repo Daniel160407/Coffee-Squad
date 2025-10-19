@@ -3,7 +3,7 @@ import Dropdown from "../uiComponents/Dropdown";
 import { useState } from "react";
 import Button from "../uiComponents/Button";
 
-const UserDetailsForm = ({ onSubmit, handleBackgroundClick }) => {
+const UserDetailsForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     age: "",
     gender: "",
@@ -122,8 +122,7 @@ const UserDetailsForm = ({ onSubmit, handleBackgroundClick }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-lg"
-      onClick={handleBackgroundClick}
+      className="fixed inset-0 z-1000 flex items-center justify-center bg-black/40 backdrop-blur-lg"
     >
       <div
         className="max-w-4xl max-h-[90vh] w-full mx-4 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden"
