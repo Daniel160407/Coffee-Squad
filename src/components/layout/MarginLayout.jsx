@@ -38,6 +38,20 @@ const fitnessInfo = [
 ];
 
 const MarginLayout = () => {
+    const { data, isPending, error } = useQuery({ 
+      queryKey: ["todos"],
+      queryFn: () => GET(),
+    });
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+      if (data) {
+        dispatch(GetData(data));  
+      }
+    }, [data, dispatch]);
+
+
   return (
     <div className="flex flex-wrap w-auto min-h-screen bg-[#8383da] screen-center justify-around text-[#fff] py-10">
       {fitnessInfo.map((items, index) => (
