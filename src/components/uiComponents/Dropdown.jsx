@@ -52,7 +52,7 @@ const Dropdown = ({
         title={selectedValue}
         style={buttonStyle}
         onClick={handleToggle}
-        type="btn"
+        type="button"
       />
 
       {isOpen && (

@@ -2,8 +2,9 @@ import Input from "../uiComponents/Input";
 import Dropdown from "../uiComponents/Dropdown";
 import { useState } from "react";
 import Button from "../uiComponents/Button";
+import { FiClock, FiX } from "react-icons/fi";
 
-const UserDetailsForm = ({ onSubmit }) => {
+const UserDetailsForm = ({ onSubmit, onClose }) => {
   const [formData, setFormData] = useState({
     age: "",
     gender: "",
@@ -121,14 +122,20 @@ const UserDetailsForm = ({ onSubmit }) => {
   };
 
   return (
-    <div
-      className="fixed inset-0 z-1000 flex items-center justify-center bg-black/40 backdrop-blur-lg"
-    >
+    <div className="fixed inset-0 z-1000 flex items-center justify-center bg-black/40 backdrop-blur-lg">
       <div
         className="max-w-4xl max-h-[90vh] w-full mx-4 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="bg-gray-800 border-b border-gray-700 p-6 sticky top-0 z-10">
+          <div className="flex justify-between items-center">
+            <Button
+              icon={FiX}
+              onClick={onClose}
+              type="button"
+              style="text-gray-400 font-semibold hover:text-white transition"
+            />
+          </div>
           <div className="text-center">
             <h1 className="text-3xl font-bold text-[#a4e636] mb-2">
               Fitness Profile

@@ -5,7 +5,7 @@ const Button = ({
   style = "",
   iconPosition = "LEFT",
   onClick,
-  type = "submit",
+  type = "button",
 }) => {
   const flexDirection = {
     TOP: "flex-col",

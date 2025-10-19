@@ -7,6 +7,7 @@ const Header = () => {
   const [showUserDetailsForm, setShowUserDetailsForm] = useState(false);
 
   const handleUserDetailsSubmit = (formData) => {
+    setShowUserDetailsForm(false);
     console.log("User details submitted:", formData);
   };
 
@@ -59,7 +60,10 @@ const Header = () => {
       </header>
       {showUserDetailsForm && (
         <div className="fixed inset-0 z-1000 flex items-center justify-center">
-          <UserDetailsForm onSubmit={handleUserDetailsSubmit} />
+          <UserDetailsForm
+            onSubmit={handleUserDetailsSubmit}
+            onClose={() => setShowUserDetailsForm(false)}
+          />
         </div>
       )}
     </>
