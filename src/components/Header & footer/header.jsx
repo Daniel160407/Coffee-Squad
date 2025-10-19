@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex flex-row gap-3 items-center cursor-pointer">
           <img
             src="./images/logo.jpg"
-            className="w-[60px] h-auto rounded-full"
+            className="w-[50px] h-auto rounded-full"
           />
           <Link to={{ pathname: "/" }}>
             <div className="flex flex-col">
@@ -45,7 +45,7 @@ const Header = () => {
             }
           />
           <Button
-            title={"Runing"}
+            title={"Running"}
             style="bg-lime-400 py-3 px-7  hover:bg-lime-500"
           />
         </div>

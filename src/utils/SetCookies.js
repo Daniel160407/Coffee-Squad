@@ -7,7 +7,7 @@ const setCookies = (data) => {
   }
 
   try {
-    Cookies.set("fullname", data.user.fullname, { expires: 1 });
+    Cookies.set("name", data.user.name, { expires: 1 });
     Cookies.set("email", data.user.email, { expires: 1 });
     Cookies.set("token", data.token, { expires: 1 });
 

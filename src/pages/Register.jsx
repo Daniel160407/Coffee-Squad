@@ -12,15 +12,17 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
+
   const [formData, setFormData] = useState({
-    fullname: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
   const [error, setError] = useState({
     email: "",
-    fullname: "",
+    name: "",
     password: "",
     confirmPassword: "",
   });
@@ -29,13 +31,13 @@ const Register = () => {
 
   const onSubmit = async (formData) => {
     try {
-      const response = await useAxios.post("/register", formData, {
+      const response = await useAxios.post("/api/auth/register", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      if (response?.status === 200) {
+      if (response?.status === 201) {
         setCookies(response.data);
         navigate("/products");
       }
@@ -45,7 +47,7 @@ const Register = () => {
 
         setError({
           email: errors.email || "",
-          fullname: errors.fullname || "",
+          name: errors.name || "",
           password: errors.password || "",
         });
       }
@@ -71,7 +73,7 @@ const Register = () => {
     }
 
     const data = new FormData();
-    data.append("fullname", formData.fullname);
+    data.append("name", formData.name);
     data.append("email", formData.email);
     data.append("password", formData.password);
 
@@ -114,12 +116,12 @@ const Register = () => {
         <form onSubmit={handleSubmit} className="rounded-md">
           <div className="flex w-full flex-col gap-[24px]">
             <Input
-              value={formData.fullname}
+              value={formData.name}
               setValue={handleChange}
               type="text"
-              name="fullname"
+              name="name"
               placeholder="Full name *"
-              errorMessage={error.fullname ?? ""}
+              errorMessage={error.name ?? ""}
             />
 
             <Input
