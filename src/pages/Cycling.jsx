@@ -1,3 +1,4 @@
+import Header from "../components/layout/Header";
 import PageHeader from "../components/layout/PageHeader";
 import MarginLayout from "../components/MarginLayout/MarginLayout";
 import MyBarChart from "../components/Chart/ChartForWeeklyWorkout";

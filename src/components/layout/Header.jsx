@@ -23,12 +23,8 @@ const Header = () => {
         <div className="flex flex-row gap-3 items-center cursor-pointer">
           <img
             src="./images/logo.jpg"
-<<<<<<<< HEAD:src/components/Header & footer/header.jsx
-            className="w-[50px] h-auto rounded-full"
-========
             className="w-[60px] h-auto rounded-full"
             alt="Coffee Fitness Logo"
->>>>>>>> 426042cafe6e2622dbc4d26f01386cc07dcae7a2:src/components/layout/Header.jsx
           />
           <Link to={{ pathname: "/" }}>
             <div className="flex flex-col">
@@ -49,7 +45,7 @@ const Header = () => {
             }
           />
           <Button
-            title={"Running"}
+            title={"Runing"}
             style="bg-lime-400 py-3 px-7  hover:bg-lime-500"
           />
         </div>

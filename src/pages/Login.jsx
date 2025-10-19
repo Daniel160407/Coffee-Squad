@@ -22,9 +22,10 @@ const Login = () => {
     try {
       const response = await useAxios.post("/api/auth/login", formData);
       console.log(response.data)
+      const response = await useAxios.post("/api/auth/login", formData);
       if (response?.status === 200) {
         setCookies(response.data);
-        navigate("/products");
+        navigate("/cycling");
       }
     } catch (err) {
       if (err.response?.status === 422) {

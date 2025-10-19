@@ -1,9 +1,4 @@
-import React, { useEffect } from "react";
- 
 import RadarChart from "../Chart/ChartForStats";
-import { useDispatch } from "react-redux";
-import { useQuery } from "@tanstack/react-query";
-import { GetData } from "../../../Redux/Reducer";
 import { Link } from "react-router-dom";
 
 const fitnessInfo = [

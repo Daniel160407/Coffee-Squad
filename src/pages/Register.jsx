@@ -31,11 +31,7 @@ const Register = () => {
 
   const onSubmit = async (formData) => {
     try {
-      const response = await useAxios.post("/api/auth/register", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await useAxios.post("/api/auth/register", formData);
 
       if (response?.status === 201) {
         setCookies(response.data);

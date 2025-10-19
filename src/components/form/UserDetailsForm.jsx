@@ -121,14 +121,8 @@ const UserDetailsForm = ({ onSubmit, handleBackgroundClick }) => {
   };
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-lg"
-      onClick={handleBackgroundClick}
-    >
-      <div
-        className="max-w-4xl max-h-[90vh] w-full mx-4 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="fixed flex items-center justify-center">
+      <div className="max-w-4xl max-h-[90vh] w-full mx-4 bg-gray-900 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden">
         <div className="bg-gray-800 border-b border-gray-700 p-6 sticky top-0 z-10">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-[#a4e636] mb-2">
