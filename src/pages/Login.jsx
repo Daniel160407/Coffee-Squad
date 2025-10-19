@@ -21,10 +21,9 @@ const Login = () => {
   const onSubmit = async (formData) => {
     try {
       const response = await useAxios.post("/api/auth/login", formData);
-      console.log(response.data)
-      const response = await useAxios.post("/api/auth/login", formData);
       if (response?.status === 200) {
         setCookies(response.data);
+        navigate("/cycling");
         navigate("/cycling");
       }
     } catch (err) {

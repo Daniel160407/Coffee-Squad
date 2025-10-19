@@ -1,11 +1,9 @@
 import Header from "../components/layout/Header";
 import PageHeader from "../components/layout/PageHeader";
-import MarginLayout from "../components/MarginLayout/MarginLayout";
+import RadarChart from "../components/Chart/ChartForStats";
+import BarChart from "../components/Chart/ChartForWeeklyWorkout";
 import MyBarChart from "../components/Chart/ChartForWeeklyWorkout";
- 
-import Footer from "../components/Header & footer/footer";
-import Header from "../components/Header & footer/header";
- 
+import MarginLayout from "../components/layout/MarginLayout";
 
 const Cycling = () => {
   return (
